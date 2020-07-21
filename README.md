@@ -1,3 +1,3 @@
 # nymann.dev
 
-My personal website.
+My personal website. [nymann.dev](https://nymann.dev). Nothing fancy.
