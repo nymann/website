@@ -2,10 +2,10 @@ name: Deploy nymann.dev
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -17,8 +17,8 @@ jobs:
           password: ${{ secrets.REGISTRY_PASS }}
       - name: Publish to registry
         run: |
-          docker build --cache-from $ONBUILD -t $ONBUILD -f docker/Dockerfile .
-          docker push registry.nymann.dev/website
+          docker build --cache-from $ONBUILD -t $ONBUILD -f Dockerfile .
+          docker push --all-tags registry.nymann.dev/website
         env:
-            ONBUILD: registry.nymann.dev/website:onbuild
-            IMAGE: registry.nymann.dev/website
+          ONBUILD: registry.nymann.dev/website:onbuild
+          IMAGE: registry.nymann.dev/website
