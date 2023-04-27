@@ -20,5 +20,5 @@ jobs:
           docker build --cache-from $ONBUILD -t $ONBUILD -f Dockerfile .
           docker push --all-tags registry.nymann.dev/website
         env:
-          ONBUILD: registry.nymann.dev/website:onbuild
-          IMAGE: registry.nymann.dev/website
+          ONBUILD: nymann/website:onbuild
+          IMAGE: nymann/website
