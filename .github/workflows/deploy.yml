@@ -12,7 +12,6 @@ jobs:
       - name: Publish to registry
         uses: azure/docker-login@v1
         with:
-          login-server: registry.nymann.dev
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASS }}
       - name: Publish to registry
